@@ -47,6 +47,12 @@ check "python-modules-installation"
 sudo apt install mysql-server -y
 check "mysql-server-installation" 
 
+sudo systemctl enable --now mysqld.service
+check "mysqld.service-start"
+
+sudo ufw allow 3306/tcp
+sudo ufw allow 5000/tcp
+sudo ufw reload
 
 sudo mysql -e "CREATE USER '$db_user'@'localhost' IDENTIFIED BY '$db_pass';"
 sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$db_user'@'localhost';"
