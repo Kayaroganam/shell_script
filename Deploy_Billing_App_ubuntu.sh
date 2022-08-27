@@ -10,7 +10,7 @@ function print_color(){
                 echo -e "$RED $2 [FAILD] $NC"
         elif [ $1 == 'green' ]
         then
-                echo -e "$GREEN $2 [OK] $NC"
+                echo -e "$GREEN $2 [SUCCESS] $NC"
         else
                 echo ""
         fi
@@ -32,36 +32,36 @@ app_pass="rxynvahxkluzqykg"
 db_name="bill"
 
 sudo apt update -y 
-check "system update"
+check "system-update"
 
 sudo apt install python3 -y 
-check "install python3"
+check "python-installation"
 
 sudo apt install python3-pip -y 
-check "install python3-pip"
+check "python3-pip-installation"
 
 sudo pip3 install flask mysql-connector-python 
-check "install python modules"
+check "python-modules-installation"
 
 
 sudo apt install mysql-server -y
-check "install mysql-server" 
+check "mysql-server-installation" 
 
 
 sudo mysql -e "CREATE USER '$db_user'@'localhost' IDENTIFIED BY '$db_pass';"
 sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$db_user'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
-check "database configuration"
+check "database-configuration"
 
 
 sudo apt install git 
-check "install git"
+check "git-installation"
 
 sudo git clone https://github.com/Kayaroganam/BillingApp.git /opt/BillingApp 
-check "repository download"
+check "repository-download"
 
 sudo chmod -R 777 /opt/BillingApp
-check "permission setting "
+check "permission-setting "
 
 sudo cat > /opt/BillingApp/variables.py <<-EOF
 class var:
@@ -79,7 +79,7 @@ class var:
     #Company name
     Company = 'Stationery Store' # Enter your title name
 EOF
-check "variable.py configuration"
+check "variable.py-configuration"
 
 
 sudo python3 /opt/BillingApp/run.py
