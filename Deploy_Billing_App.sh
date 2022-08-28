@@ -73,9 +73,6 @@ then
     sudo systemctl enable --now mysqld.service
     check "mysqld.service-start"
 
-    sudo systemctl enable --now mysqld.service
-    check "mysqld.service-start"
-
     sudo firewall-cmd --permanent --add-port=3306/tcp
     sudo firewall-cmd --permanent --add-port=5000/tcp
     sudo firewall-cmd --reload
