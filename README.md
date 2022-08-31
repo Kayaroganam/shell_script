@@ -1,4 +1,4 @@
-### This Shell script will used for to Deploy my Billing Application automatically which is available on my github repository list.
+### This Shell script will used for to Deploy the Billing Application automatically which is available on my github repository named BillingApp.
 `
 Open your terminal and execute the given commands
 `
