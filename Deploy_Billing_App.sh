@@ -32,8 +32,8 @@ function check(){
 db_user="billing_app" #Enter username for database
 db_pass="billing_app" #Enter password for database
 db_name="billing_app" #Enter database name to create
-email="example123@gmail.com" #Enter your gamail id | note: Onlye gamil
-app_pass="rxynvahxkluzqykg" #create app password on your google account and put here
+email="kayarogan2003@gmail.com" #Enter your gamail id | note: Onlye gamil
+app_pass="fabylfwgupvgetne" #create app password on your google account and put here
 
 
 flag="null"
